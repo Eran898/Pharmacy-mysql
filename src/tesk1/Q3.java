@@ -25,7 +25,7 @@ public class Q3 {
 			String updatequeue =  "{call updatequeue(?)}";
 			CallableStatement stmt = null;
 			Connection myConn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/farmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
+					"jdbc:mysql://localhost:3306/pharmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
 			Statement myStmt = myConn.createStatement();
 			ResultSet myRs = myStmt.executeQuery("SELECT queue.appointment_id FROM queue\r\n"
 					+ "inner join appointment ON (appointment.appointment_id = queue.appointment_id)\r\n"

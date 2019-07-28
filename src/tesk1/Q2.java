@@ -21,7 +21,7 @@ public class Q2 {
 			sc.close();
 
 			Connection myConn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/farmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
+					"jdbc:mysql://localhost:3306/pharmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
 			Statement myStmt = myConn.createStatement();
 			ResultSet myRs = myStmt
 					.executeQuery("SELECT patients.patient_id, patients.patient_name, appointment.appointment_time FROM doctors, patients, appointment\r\n"

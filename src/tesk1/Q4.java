@@ -13,7 +13,7 @@ public class Q4 {
 	public static void topTenPatients() {
 		try {
 			Connection myConn = DriverManager
-					.getConnection("jdbc:mysql://localhost:3306/farmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
+					.getConnection("jdbc:mysql://localhost:3306/pharmacy5?autoReconnect=true&useSSL=false", "root", "12345678");
 			Statement myStmt = myConn.createStatement();
 			int myRs = myStmt.executeUpdate("DROP VIEW IF EXISTS `top_ten_patients`;\r\n");// drop the old view
 			 myRs = myStmt.executeUpdate("CREATE VIEW top_ten_patients AS\r\n"+ //create new view
@@ -22,7 +22,7 @@ public class Q4 {
 					"inner join queue ON (queue.appointment_id = appointment.appointment_id)\r\n" + 
 					"ORDER BY ( appointment.appointment_time - queue.actual_time )  limit 10; \r\n");
 			 ResultSet myRs2 = myStmt.executeQuery("SELECT patient_name\r\n" + 
-			 		"FROM `farmacy5`.`top_ten_patients`;\r\n");//show the view in java 
+			 		"FROM `pharmacy5`.`top_ten_patients`;\r\n");//show the view in java 
 			 while (myRs2.next()) {
 					System.out.println(myRs2.getString("patient_name"));
 
