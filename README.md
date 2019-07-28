@@ -1,4 +1,4 @@
-# Farmacy-mysql
+# Pharmacy-mysql
 Tasks in Database course
 
 we needed to build a code in java that connect to mysql database 
